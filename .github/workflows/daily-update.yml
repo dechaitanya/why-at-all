@@ -1,9 +1,9 @@
-name: Daily Repository Update
+name: Daily Repository Update - 21f3002106@ds.study.iitm.ac.in
 
 on:
   schedule:
-    - cron: '0 9 * * *'   # Runs daily at 9:00 UTC
-  workflow_dispatch:       # Allows manual trigger for testing
+    - cron: '0 9 * * *'
+  workflow_dispatch:
 
 jobs:
   update:
@@ -13,9 +13,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: 21f3002106@ds.study.iitm.ac.in - Create daily commit
+      - name: Create daily commit
         run: |
-          echo "Last updated on $(date)" > daily-log.txt
+          echo "Last updated on $(date)" >> daily-log.txt
           
           git config user.name "github-actions"
           git config user.email "21f3002106@ds.study.iitm.ac.in"
